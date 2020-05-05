@@ -4,6 +4,7 @@
 commitlint.config.js
 .env
 .env.example.sh
+config/
 
 .lintstagedrc.json
 .editorconfig

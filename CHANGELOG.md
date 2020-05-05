@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/w4rlock/serverless-config/compare/0.0.2...0.0.3) (2020-05-05)
+
+
+### Bug Fixes
+
+* remove hook ([62dbb48](https://github.com/w4rlock/serverless-config/commit/62dbb48b4daff555a92756bbdff9b904eaf7d97c))
+
 ### 0.0.2 (2020-05-05)
 
 

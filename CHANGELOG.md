@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.2 (2020-05-05)
+
+
+### Features
+
+* add features ([d67180d](https://github.com/w4rlock/serverless-config/commit/d67180d9cf61aa043eb6d304ed97998dd42c21d0))
+* add features ([8851b03](https://github.com/w4rlock/serverless-config/commit/8851b0373dcd5ac18763f2a399c3f7d6208a42b1))
+
 ### [0.2.1](https://github.com/w4rlock/template-base-serverless-plugin/compare/0.2.0...0.2.1) (2020-04-16)
 
 

@@ -1,5 +1,5 @@
 {
-  "name": "serverless-config",
+  "name": "serverless-nconfig",
   "version": "0.0.4",
   "description": "Serverless plugin",
   "keywords": [
@@ -19,7 +19,7 @@
     "release:major": "npm run release -- --release-as major",
     "release:minor": "npm run release -- --release-as minor",
     "release:patch": "npm run release -- --release-as patch",
-    "unpublish": "npx force-unpublish serverless-config 'npmrc remove module'"
+    "unpublish": "npx force-unpublish serverless-nconfig 'npmrc remove module'"
   },
   "husky": {
     "hooks": {

@@ -1,6 +1,6 @@
 {
-  "name": "template-base-serverless-plugin",
-  "version": "0.2.1",
+  "name": "serverless-config",
+  "version": "0.0.1",
   "description": "Serverless plugin",
   "keywords": [
     "Serverless"
@@ -19,7 +19,7 @@
     "release:major": "npm run release -- --release-as major",
     "release:minor": "npm run release -- --release-as minor",
     "release:patch": "npm run release -- --release-as patch",
-    "unpublish": "npx force-unpublish template-base-serverless-plugin 'npmrc remove module'"
+    "unpublish": "npx force-unpublish serverless-config 'npmrc remove module'"
   },
   "husky": {
     "hooks": {

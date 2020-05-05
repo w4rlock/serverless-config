@@ -30,7 +30,6 @@ class ServerlessConfig {
 
     this.hooks = {
       'before:info:info': () => Promise.reject(new Error('break')),
-      'before:package:initialize': () => Promise.reject(new Error('break')),
     };
 
     this.variableResolvers = {

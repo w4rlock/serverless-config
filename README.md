@@ -1,20 +1,9 @@
-## Base Template for Serverless Plugin
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
-[![npm version](https://badge.fury.io/js/template-base-serverless-plugin.svg)](https://badge.fury.io/js/template-base-serverless-plugin)
-[![npm downloads](https://img.shields.io/npm/dt/template-base-serverless-plugin.svg?style=flat)](https://www.npmjs.com/package/template-base-serverless-plugin)
+[![npm version](https://badge.fury.io/js/serverless-config.svg)](https://badge.fury.io/js/serverless-config)
+[![npm downloads](https://img.shields.io/npm/dt/serverless-config.svg?style=flat)](https://www.npmjs.com/package/serverless-config)
 
 ### Installation
 ```bash
-git clone https://github.com/w4rlock/template-base-serverless-plugin.git
-
-Or
-
-Click green button "Use this template"
+npm i -E serverless-config
 ```
-
-### Usage
-To do Use generator to render:
-- README.md
-- index.js
-- serverless.yml
 

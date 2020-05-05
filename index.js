@@ -28,10 +28,6 @@ class ServerlessConfig {
       await resolveAsyncConfigs(this.config);
     });
 
-    this.hooks = {
-      'before:info:info': () => Promise.reject(new Error('break')),
-    };
-
     this.variableResolvers = {
       config: {
         serviceName: 'ServerlessConfig',

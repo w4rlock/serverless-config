@@ -59,11 +59,11 @@ class ServerlessConfig {
     const [, deepPath, defaultValue] = prop.split(':');
     val = _.get(this.config, deepPath, defaultValue);
 
-    if (_.isEmpty(val)) {
+    if (_.isEmpty(val) && !_.isBoolean(val)) {
       let err = '';
       err += 'KEY_OR_VALUE_IS_MISSING: ';
-      err += `Conf or value not found for "${prop}" key. `;
-      err += 'Check in serverless.yml or configure this prop value.';
+      err += `key or value not found for '${deepPath}' key. `;
+      err += `Check in serverless.yml '${prop}' or configure this prop value.`;
       err += 'https://github.com/lorenwest/node-config/wiki/';
       err += 'Configuration-Files';
 

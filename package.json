@@ -1,7 +1,7 @@
 {
   "name": "serverless-nconfig",
   "version": "0.0.5",
-  "description": "Serverless plugin",
+  "description": "Serverless node config plugin",
   "keywords": [
     "Serverless"
   ],

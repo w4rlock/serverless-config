@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/w4rlock/serverless-config/compare/0.0.5...0.0.6) (2020-05-07)
+
+
+### Bug Fixes
+
+* boolean value ([0444671](https://github.com/w4rlock/serverless-config/commit/0444671478dade4badbcd727612bc11051af30c8))
+
 ### [0.0.5](https://github.com/w4rlock/serverless-config/compare/0.0.4...0.0.5) (2020-05-05)
 
 

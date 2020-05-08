@@ -9,12 +9,15 @@ npm i -E serverless-nconfig
 
 ### Before configure your environments files.
 ```bash
-config
-├── custom-environment-variables.yaml
-├── default.js
-├── develop.js
-├── testing.yaml
-├── production.js
+.
+├── serverless.yml
+├── config
+│   ├── custom-environment-variables.yaml
+│   ├── default.js
+│   ├── develop.js
+│   ├── testing.js
+│   ├── production.js
+  
 ```
 
 ### Usage
@@ -23,8 +26,9 @@ plugins:
   - serverless-nconfig
 
 custom:
-  prop1: ${config:path.to.obj.value:default_value}
+  dbPort: ${config:db.mysql.port:3306}
   prop2: ${config:path.to.required.value}
+  prop2: ${config:some.path:DEFAULT_VALUE_HERE}
 
 ```
 

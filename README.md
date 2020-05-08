@@ -38,3 +38,7 @@ $ serverless print --stage develop
 $ serverless print --stage testing
 $ serverless print --stage production
 ```
+
+
+### Configuration References
+https://github.com/lorenwest/node-config

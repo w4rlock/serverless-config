@@ -17,7 +17,7 @@ npm i -E serverless-nconfig
 │   ├── develop.js
 │   ├── testing.js
 │   ├── production.js
-  
+
 ```
 
 ### Usage
@@ -32,4 +32,9 @@ custom:
 
 ```
 
-
+### Test - Render Serverless Config
+```bash
+$ serverless print --stage develop
+$ serverless print --stage testing
+$ serverless print --stage production
+```

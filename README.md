@@ -8,13 +8,14 @@ npm i -E serverless-nconfig
 ```
 
 ### Before configure your environments files.
+```bash
 config
 ├── custom-environment-variables.yaml
 ├── default.js
 ├── develop.js
 ├── testing.yaml
 ├── production.js
-
+```
 
 ### Usage
 ```yaml

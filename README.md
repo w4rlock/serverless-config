@@ -22,8 +22,8 @@ npm i -E serverless-nconfig
 
 ### Feature
 ```yaml
-- Support all node-config features.
-- Fetch Config from Aws - SSM
+- Support all "node-config" features.
+- Fetch Config from "AWS - SSM"
 ```
 
 ### Usage
@@ -36,6 +36,23 @@ custom:
   prop2: ${config:path.to.required.value}
   prop2: ${config:some.path:DEFAULT_VALUE_HERE}
 
+```
+
+### Code Example
+```javascript
+const { GetvaluefromSSM }  = require('serverless-nconfig/src/resolvers');
+
+const stage = process.env.SLS_INSTANCE_STAGE;
+const region = process.env.SLS_INSTANCE_REGION;
+
+module.exports = {
+  db: {
+    mysql: {
+      port: 3306,
+      passwd: GetvaluefromSSM(region, `/${stage}/SECRET_PATH`, true)
+    }
+  },
+};
 ```
 
 ### Test - Render Serverless Config

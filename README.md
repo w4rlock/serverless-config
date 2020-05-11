@@ -49,7 +49,7 @@ module.exports = {
   db: {
     mysql: {
       port: 3306,
-      passwd: GetvaluefromSSM(region, `/${stage}/SECRET_PATH`, true)
+      passwd: GetvaluefromSSM(region, `/${stage}/MY_SQL_PASSWORD`, true)
     }
   },
 };

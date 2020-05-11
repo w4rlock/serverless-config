@@ -20,6 +20,12 @@ npm i -E serverless-nconfig
 
 ```
 
+### Feature
+```yaml
+- Support all node-config features.
+- Fetch Config from Aws - SSM
+```
+
 ### Usage
 ```yaml
 plugins:

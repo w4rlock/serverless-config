@@ -28,7 +28,7 @@ npm i -E serverless-nconfig
 
 ### Code Example
 ```javascript
-# config/default.js
+// config/default.js
 
 const { GetValueFromSSM }  = require('serverless-nconfig/src/resolvers');
 

@@ -40,7 +40,7 @@ custom:
 
 ### Code Example
 ```javascript
-const { GetValuefromSSM }  = require('serverless-nconfig/src/resolvers');
+const { GetValueFromSSM }  = require('serverless-nconfig/src/resolvers');
 
 const stage = process.env.SLS_INSTANCE_STAGE;
 const region = process.env.SLS_INSTANCE_REGION;
@@ -49,7 +49,7 @@ module.exports = {
   db: {
     mysql: {
       port: 3306,
-      passwd: GetValuefromSSM(region, `/${stage}/MY_SQL_PASSWORD`, true)
+      passwd: GetValueFromSSM(region, `/${stage}/MY_SQL_PASSWORD`, true)
     }
   },
 };

@@ -1,5 +1,5 @@
-const GetValuefromSSM = require('./getValueFromSSM');
+const GetValueFromSSM = require('./getValueFromSSM');
 
 module.exports = {
-  GetValuefromSSM,
+  GetValueFromSSM,
 };

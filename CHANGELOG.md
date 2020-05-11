@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.0](https://github.com/w4rlock/serverless-config/compare/0.0.6...0.1.0) (2020-05-11)
+
+
+### Features
+
+* add ssm support ([f50ad93](https://github.com/w4rlock/serverless-config/commit/f50ad934f33420b1eeef11009d865e5c0ed47f54))
+
 ### [0.0.6](https://github.com/w4rlock/serverless-config/compare/0.0.5...0.0.6) (2020-05-07)
 
 

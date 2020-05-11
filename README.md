@@ -26,20 +26,10 @@ npm i -E serverless-nconfig
 - Fetch Config from "AWS - SSM".
 ```
 
-### Usage
-```yaml
-plugins:
-  - serverless-nconfig
-
-custom:
-  dbPort: ${config:db.mysql.port:3306}
-  prop2: ${config:path.to.required.value}
-  prop2: ${config:some.path:DEFAULT_VALUE_HERE}
-
-```
-
 ### Code Example
 ```javascript
+// config/default.js
+
 const { GetValueFromSSM }  = require('serverless-nconfig/src/resolvers');
 
 const stage = process.env.SLS_INSTANCE_STAGE;
@@ -54,6 +44,19 @@ module.exports = {
   },
 };
 ```
+
+### Usage
+```yaml
+plugins:
+  - serverless-nconfig
+
+custom:
+  dbPort: ${config:db.mysql.port:3306}
+  prop2: ${config:path.to.required.value}
+  prop2: ${config:some.path:DEFAULT_VALUE_HERE}
+
+```
+
 
 ### Test - Render Serverless Config
 ```bash

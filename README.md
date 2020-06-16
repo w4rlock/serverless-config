@@ -75,7 +75,7 @@ module.exports = {
 // file: config/default.js
 const GetFromVault = require('serverless-nconfig/src/resolvers/vault')({
   host: 'vault.corp.com',
-  roleId: '____ROLE_ID___HERE___'
+  roleId: '____ROLE_ID___HERE___',
   secretId: '____SECRET_ID___HERE___'
 });
 

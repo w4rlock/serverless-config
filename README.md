@@ -31,7 +31,7 @@ npm i -E serverless-nconfig
 ### Secret From Aws - SSM
 ```javascript
 // file: config/default.js
-const { GetSSM } = require('serverless-nconfig/src/resolvers');
+const { GetFromSSM } = require('serverless-nconfig/src/resolvers');
 
 const stage = process.env.SLS_STAGE;
 const region = process.env.AWS_REGION;
@@ -41,7 +41,7 @@ module.exports = {
     mysql: {
       port: 3306,
       user: admin,
-      passwd: GetSSM(`/${stage}/MY_SQL_PASSWORD`, true)
+      passwd: GetFromSSM(`/${stage}/MY_SQL_PASSWORD`, true)
     }
   },
 };
@@ -50,7 +50,7 @@ module.exports = {
 ### Secret From Vault. Option 1
 ```javascript
 // file: config/default.js
-const GetVault = require('serverless-nconfig/src/resolvers/getVault')({
+const GetFromVault = require('serverless-nconfig/src/resolvers/vault')({
   host: 'vault.corp.com',
   token: '____TOKEN___HERE___'
 });
@@ -61,7 +61,7 @@ module.exports = {
     mysql: {
       port: 3306,
       user: admin,
-      passwd: GetVault('/team/service/name/mysql-password'),
+      passwd: GetFromVault('/team/service/name/mysql-password'),
     }
   },
 };
@@ -71,7 +71,7 @@ module.exports = {
 ### Secret From Vault. Option 2
 ```javascript
 // file: config/default.js
-const GetVault = require('serverless-nconfig/src/resolvers/getVault')({
+const GetFromVault = require('serverless-nconfig/src/resolvers/vault')({
   host: 'vault.corp.com',
   roleId: '____ROLE_ID___HERE___'
   secretId: '____SECRET_ID___HERE___'
@@ -83,7 +83,7 @@ module.exports = {
     mysql: {
       port: 3306,
       user: admin,
-      passwd: GetVault('/team/service/name/mysql', 'resp.path.to.mysql.pass')
+      passwd: GetFromVault('/team/service/name/mysql', 'resp.path.to.mysql.pass')
     }
   },
 };
@@ -95,16 +95,16 @@ module.exports = {
 ```javascript
 // file: config/default.js
 
-const { GetStackOutput } = require('serverless-nconfig/src/resolvers');
+const { GetFromStackOutput } = require('serverless-nconfig/src/resolvers');
 
 const stackName = 'my-app-service'
 const stage = process.env.SLS_STAGE;
 
 module.exports = {
   app: {
-    redisUrl: GetStackOutput(`app-infra-${stage}`, 'redisUrl'),
-    dynamoUrl: GetStackOutput(`app-infra-${stage}`, 'dynamoUrl'),
-    cloudFrontUrl: GetStackOutput(`${stackName}-${stage}`, 'CloudFrontUrl')
+    redisUrl: GetFromStackOutput(`app-infra-${stage}`, 'redisUrl'),
+    dynamoUrl: GetFromStackOutput(`app-infra-${stage}`, 'dynamoUrl'),
+    cloudFrontUrl: GetFromStackOutput(`${stackName}-${stage}`, 'CloudFrontUrl')
   },
 };
 ```

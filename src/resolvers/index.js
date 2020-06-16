@@ -1,9 +1,9 @@
-const GetSSM = require('./getSSM.js');
-const GetVault = require('./getVault.js');
-const GetStackOutput = require('./getStackOutput.js');
+const GetFromSSM = require('./ssm.js');
+const GetFromVault = require('./vault.js');
+const GetFromStackOutput = require('./stackOutput.js');
 
 module.exports = {
-  GetSSM,
-  GetStackOutput,
-  GetVault,
+  GetFromSSM,
+  GetFromStackOutput,
+  GetFromVault,
 };

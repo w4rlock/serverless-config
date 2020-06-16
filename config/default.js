@@ -1,10 +1,10 @@
 const defer = require('config/defer').deferConfig;
 const Utils = require('./utils');
-const { GetSSM } = require('../src/resolvers');
-// const GetStackOutput = require('../src/resolvers/getStackOutput');
-// const GetVault = require('../src/resolvers/getVault')({
-  // host: 'vault.corp.com',
-  // token: '<<<<<<<<<_______TOKEN___HERE___>>>>>>>>>>>>>>>>>>>',
+const { GetFromSSM } = require('../src/resolvers');
+const GetFromStackOuput = require('../src/resolvers/stackOutput');
+// const GetFromVault = require('../src/resolvers/vault')({
+// host: 'vault.corp.com',
+// token: '<<<<<<<<<_______TOKEN___HERE___>>>>>>>>>>>>>>>>>>>',
 // });
 
 const stage = process.env.SLS_STAGE;
@@ -19,11 +19,11 @@ module.exports = {
     testDefer: defer((cfg) => `${cfg.app.s3Name}-adasdas`),
     xx: Utils.fromTest('adasdasdadad'),
 
-    Key: GetSSM(`/${stage}/CLOUDFLARE_SECRET`, true),
-    // stack: GetStackOutput('stackName-develop', 'CloudFrontUrl'),
+    Key: GetFromSSM(`/${stage}/CLOUDFLARE_AUTH_TOKEN`, true),
+    stack: GetFromStackOuput('front-web-develop', 'CloudFrontUrl'),
     // scenarios
-    // mysql: GetVault('mysql-develop', 'creds.password'),
-    // khatu: GetVault('mysql-develop'),
-    // khatu: GetVault('mysql-develop', 'ws.wrong.path'),
+    // mysql: GetFromVault('mysql-develop', 'creds.password'),
+    // khatu: GetFromVault('mysql-develop'),
+    // khatu: GetFromVault('mysql-develop', 'ws.wrong.path'),
   },
 };

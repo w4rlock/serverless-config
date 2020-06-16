@@ -25,10 +25,12 @@ npm i -E serverless-nconfig
 ### Feature
 ```yaml
 - Support all "node-config" features.
-- Fetch Config from "AWS - SSM".
+- Fetch Config from Aws CloudFormation Stack Outputs.
+- Fetch Secret from VAULT.
+- Fetch Config from AWS - SSM.
 ```
 
-### Secret From Aws - SSM
+### Fetch Secret From Aws - SSM
 ```javascript
 // file: config/default.js
 const { GetFromSSM } = require('serverless-nconfig/src/resolvers');
@@ -47,7 +49,7 @@ module.exports = {
 };
 ```
 
-### Secret From Vault. Option 1
+### Fetch Secret From Vault. Option 1
 ```javascript
 // file: config/default.js
 const GetFromVault = require('serverless-nconfig/src/resolvers/vault')({
@@ -68,7 +70,7 @@ module.exports = {
 ```
 
 
-### Secret From Vault. Option 2
+### Fetch Secret From Vault. Option 2
 ```javascript
 // file: config/default.js
 const GetFromVault = require('serverless-nconfig/src/resolvers/vault')({
@@ -136,6 +138,5 @@ https://github.com/lorenwest/node-config
 
 ## Donation
 Donate helps me to continue adding new features or bugs fix..
-If this project help you reduce time to develop, you can buy me a :beer: IPA... Every tiny cents help me a lot ... Thanks!
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=278YCRJXTXLXJ)

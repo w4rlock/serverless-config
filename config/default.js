@@ -1,11 +1,11 @@
 const defer = require('config/defer').deferConfig;
 const Utils = require('./utils');
 const { GetSSM } = require('../src/resolvers');
-const GetStackOutput = require('../src/resolvers/getStackOutput');
-const GetVault = require('../src/resolvers/getVault')({
-  host: 'vault.corp.com',
-  token: '<<<<<<<<<_______TOKEN___HERE___>>>>>>>>>>>>>>>>>>>',
-});
+// const GetStackOutput = require('../src/resolvers/getStackOutput');
+// const GetVault = require('../src/resolvers/getVault')({
+  // host: 'vault.corp.com',
+  // token: '<<<<<<<<<_______TOKEN___HERE___>>>>>>>>>>>>>>>>>>>',
+// });
 
 const stage = process.env.SLS_STAGE;
 // const region = process.env.SLS_INSTANCE_REGION;

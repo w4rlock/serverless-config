@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.2](https://github.com/w4rlock/serverless-config/compare/1.0.1...1.0.2) (2020-06-16)
+
+
+### Bug Fixes
+
+* rename methods ([ee8f356](https://github.com/w4rlock/serverless-config/commit/ee8f356109759aa24864a5b9ad646a0b604e6c33))
+
 ### [1.0.1](https://github.com/w4rlock/serverless-config/compare/1.0.0...1.0.1) (2020-06-16)
 
 

@@ -8,7 +8,7 @@ const GetFromStackOuput = require('../src/resolvers/stackOutput');
 // });
 
 const stage = process.env.SLS_STAGE;
-// const region = process.env.SLS_INSTANCE_REGION;
+// const region = process.env.AWS_REGION;
 
 module.exports = {
   app: {
@@ -19,7 +19,7 @@ module.exports = {
     testDefer: defer((cfg) => `${cfg.app.s3Name}-adasdas`),
     xx: Utils.fromTest('adasdasdadad'),
 
-    Key: GetFromSSM(`/${stage}/CLOUDFLARE_AUTH_TOKEN`, true),
+    Key: GetFromSSM(`/${stage}/CLOUDFLARE_SECRET`, true),
     stack: GetFromStackOuput('front-web-develop', 'CloudFrontUrl'),
     // scenarios
     // mysql: GetFromVault('mysql-develop', 'creds.password'),

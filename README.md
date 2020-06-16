@@ -25,7 +25,9 @@ npm i -E serverless-nconfig
 ### Feature
 ```yaml
 - Support all "node-config" features.
-- Fetch Config from "AWS - SSM".
+- Fetch Config from Aws CloudFormation Stack Outputs.
+- Fetch Secret from VAULT.
+- Fetch Config from AWS - SSM.
 ```
 
 ### Secret From Aws - SSM

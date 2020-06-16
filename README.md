@@ -30,6 +30,27 @@ npm i -E serverless-nconfig
 - Fetch Config from AWS - SSM.
 ```
 
+### Usage
+```yaml
+plugins:
+  - serverless-nconfig
+
+custom:
+  dbPort: ${config:db.mysql.port:3306}
+  prop2: ${config:path.to.required.value}
+  prop2: ${config:some.path:DEFAULT_VALUE_HERE}
+
+```
+
+
+### Test - Render Serverless Config
+```bash
+$ serverless print --stage develop
+$ serverless print --stage testing
+$ serverless print --stage production
+```
+
+
 ### Fetch Secret From Aws - SSM
 ```javascript
 // file: config/default.js
@@ -109,26 +130,6 @@ module.exports = {
     cloudFrontUrl: GetFromStackOutput(`${stackName}-${stage}`, 'CloudFrontUrl')
   },
 };
-```
-
-### Usage
-```yaml
-plugins:
-  - serverless-nconfig
-
-custom:
-  dbPort: ${config:db.mysql.port:3306}
-  prop2: ${config:path.to.required.value}
-  prop2: ${config:some.path:DEFAULT_VALUE_HERE}
-
-```
-
-
-### Test - Render Serverless Config
-```bash
-$ serverless print --stage develop
-$ serverless print --stage testing
-$ serverless print --stage production
 ```
 
 

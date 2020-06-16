@@ -30,7 +30,7 @@ npm i -E serverless-nconfig
 - Fetch Config from AWS - SSM.
 ```
 
-### Secret From Aws - SSM
+### Fetch Secret From Aws - SSM
 ```javascript
 // file: config/default.js
 const { GetSSM } = require('serverless-nconfig/src/resolvers');
@@ -49,7 +49,7 @@ module.exports = {
 };
 ```
 
-### Secret From Vault. Option 1
+### Fetch Secret From Vault. Option 1
 ```javascript
 // file: config/default.js
 const GetVault = require('serverless-nconfig/src/resolvers/getVault')({
@@ -70,7 +70,7 @@ module.exports = {
 ```
 
 
-### Secret From Vault. Option 2
+### Fetch Secret From Vault. Option 2
 ```javascript
 // file: config/default.js
 const GetVault = require('serverless-nconfig/src/resolvers/getVault')({

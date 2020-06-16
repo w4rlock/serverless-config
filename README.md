@@ -26,21 +26,83 @@ npm i -E serverless-nconfig
 - Fetch Config from "AWS - SSM".
 ```
 
-### Code Example
+### Secret From Aws - SSM
 ```javascript
-// config/default.js
+// file: config/default.js
+const { GetSSM } = require('serverless-nconfig/src/resolvers');
 
-const { GetValueFromSSM }  = require('serverless-nconfig/src/resolvers');
-
-const stage = process.env.SLS_INSTANCE_STAGE;
-const region = process.env.SLS_INSTANCE_REGION;
+const stage = process.env.SLS_STAGE;
+const region = process.env.AWS_REGION;
 
 module.exports = {
   db: {
     mysql: {
       port: 3306,
-      passwd: GetValueFromSSM(region, `/${stage}/MY_SQL_PASSWORD`, true)
+      user: admin,
+      passwd: GetSSM(`/${stage}/MY_SQL_PASSWORD`, true)
     }
+  },
+};
+```
+
+### Secret From Vault. Option 1
+```javascript
+// file: config/default.js
+const GetVault = require('serverless-nconfig/src/resolvers/getVault')({
+  host: 'vault.corp.com',
+  token: '____TOKEN___HERE___'
+});
+
+
+module.exports = {
+  db: {
+    mysql: {
+      port: 3306,
+      user: admin,
+      passwd: GetVault('/team/service/name/mysql-password'),
+    }
+  },
+};
+```
+
+
+### Secret From Vault. Option 2
+```javascript
+// file: config/default.js
+const GetVault = require('serverless-nconfig/src/resolvers/getVault')({
+  host: 'vault.corp.com',
+  roleId: '____ROLE_ID___HERE___'
+  secretId: '____SECRET_ID___HERE___'
+});
+
+
+module.exports = {
+  db: {
+    mysql: {
+      port: 3306,
+      user: admin,
+      passwd: GetVault('/team/service/name/mysql', 'resp.path.to.mysql.pass')
+    }
+  },
+};
+```
+
+
+
+### Fetch Config From: Aws - Cloud Formation Stack Outputs.
+```javascript
+// file: config/default.js
+
+const { GetStackOutput } = require('serverless-nconfig/src/resolvers');
+
+const stackName = 'my-app-service'
+const stage = process.env.SLS_STAGE;
+
+module.exports = {
+  app: {
+    redisUrl: GetStackOutput(`app-infra-${stage}`, 'redisUrl'),
+    dynamoUrl: GetStackOutput(`app-infra-${stage}`, 'dynamoUrl'),
+    cloudFrontUrl: GetStackOutput(`${stackName}-${stage}`, 'CloudFrontUrl')
   },
 };
 ```

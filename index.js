@@ -17,8 +17,8 @@ class ServerlessConfig {
     const region = serverless.getProvider('aws').getRegion();
 
     process.env.NODE_ENV = stage;
-    process.env.SLS_INSTANCE_STAGE = stage;
-    process.env.SLS_INSTANCE_REGION = region;
+    process.env.AWS_REGION = region;
+    process.env.SLS_STAGE = stage;
 
     // first set NODE_ENV after that import the config module
     // eslint-disable-next-line global-require

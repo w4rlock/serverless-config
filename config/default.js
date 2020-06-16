@@ -1,9 +1,14 @@
 const defer = require('config/defer').deferConfig;
 const Utils = require('./utils');
-const { GetValueFromSSM } = require('../src/resolvers');
+const { GetSSM } = require('../src/resolvers');
+const GetStackOutput = require('../src/resolvers/getStackOutput');
+const GetVault = require('../src/resolvers/getVault')({
+  host: 'vault.corp.com',
+  token: '<<<<<<<<<_______TOKEN___HERE___>>>>>>>>>>>>>>>>>>>',
+});
 
-const stage = process.env.SLS_INSTANCE_STAGE;
-const region = process.env.SLS_INSTANCE_REGION;
+const stage = process.env.SLS_STAGE;
+// const region = process.env.SLS_INSTANCE_REGION;
 
 module.exports = {
   app: {
@@ -13,6 +18,12 @@ module.exports = {
     s3Name: defer((cfg) => `data-bucket-app-${cfg.stage}-${cfg.region}`),
     testDefer: defer((cfg) => `${cfg.app.s3Name}-adasdas`),
     xx: Utils.fromTest('adasdasdadad'),
-    Key: GetValueFromSSM(region, `/${stage}/SECRET_PATH`, true),
+
+    Key: GetSSM(`/${stage}/CLOUDFLARE_SECRET`, true),
+    // stack: GetStackOutput('stackName-develop', 'CloudFrontUrl'),
+    // scenarios
+    // mysql: GetVault('mysql-develop', 'creds.password'),
+    // khatu: GetVault('mysql-develop'),
+    // khatu: GetVault('mysql-develop', 'ws.wrong.path'),
   },
 };

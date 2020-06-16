@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/w4rlock/serverless-config/compare/1.0.0...1.0.1) (2020-06-16)
+
+
+### Features
+
+* add new resolvers ([c2bb4bd](https://github.com/w4rlock/serverless-config/commit/c2bb4bdf90aba40b7a542e8d66ce6ff64a708eb3))
+
 ## [1.0.0](https://github.com/w4rlock/serverless-config/compare/0.1.3...1.0.0) (2020-06-16)
 
 

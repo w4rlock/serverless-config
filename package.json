@@ -35,7 +35,7 @@
     "config": "3.3.1",
     "js-yaml": "3.13.1",
     "lodash": "4.17.15",
-    "vault-es6-cli": "0.3.0"
+    "vault-es6-cli": "0.5.1"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "8.3.4",
